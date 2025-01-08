@@ -2,37 +2,17 @@
 include 'config.php';
 $query = new Database();
 
-if (isset($_GET['lessonid'])) {
-    $lessonid = intval($_GET['lessonid']);
+if (isset($_GET['subjectid'])) {
+    $subjectid = intval($_GET['subjectid']);
     $participant_name = $_GET['participant_name'] ?? null;
 
-    if (!$lessonid) {
-        include '404.php';
-        exit;
-    }
+    $subjects = $query->select('subjects', '*', "id = ?", [$subjectid], 'i');
 
-    $lesson = $query->select('lessons', '*', "id = $lessonid");
-
-    if (empty($lesson)) {
-        include '404.php';
-        exit;
-    }
-
-    $tests = $query->select('test', '*', "lesson_id = $lessonid");
-    $tru_falses = $query->select('tru_false', '*', "lesson_id = $lessonid");
-    $dropdowns = $query->select('dropdown', '*', "lesson_id = $lessonid");
-    $fill_in_the_blanks = $query->select('fill_in_the_blank', '*', "lesson_id = $lessonid");
-    $matchings = $query->select('matching', '*', "lesson_id = $lessonid");
-    $text_questions = $query->select('questions', '*', "lesson_id = $lessonid");
-
-    $text_options = [];
-    $text_optionsSelecs = [];
-
-    if (!empty($text_questions) && isset($text_questions[0]['id'])) {
-        $text_questionid = $text_questions[0]['id'];
-        $text_options = $query->select('answers', '*', "question_id = '$text_questionid'") ?? [];
-        $text_optionsSelecs = $text_options;
-    }
+    $tests = $query->select('test', '*', "subject_id = ?", [$subjectid], 'i');
+    $tru_falses = $query->select('tru_false', '*', "subject_id = ?", [$subjectid], 'i');
+    $dropdowns = $query->select('dropdown', '*', "subject_id = ?", [$subjectid], 'i');
+    $fill_in_the_blanks = $query->select('fill_in_the_blank', '*', "subject_id = ?", [$subjectid], 'i');
+    $matchings = $query->select('matching', '*', "subject_id = ?", [$subjectid], 'i');
 
     shuffle($tests);
     shuffle($tru_falses);
@@ -82,24 +62,11 @@ if (isset($_GET['lessonid'])) {
             }
         }
 
-        $text_correctAnswers = [];
-        foreach ($text_options as $text_option) {
-            $text_correctAnswers[] = $text_option['answer_text'];
-        }
-
-        $text_submittedAnswers = $_POST['answers'] ?? [];
-
-        foreach ($text_submittedAnswers as $text_index => $text_answer) {
-            if ($text_answer === $text_correctAnswers[$text_index]) {
-                $correctAnswersCount++;
-            }
-        }
-
-        $totalQuestions = count($tests) + count($tru_falses) + count($dropdowns) + count($fill_in_the_blanks) + count($matchings) + count($text_correctAnswers);
+        $totalQuestions = count($tests) + count($tru_falses) + count($dropdowns) + count($fill_in_the_blanks) + count($matchings);
         $percentage = ($correctAnswersCount / $totalQuestions) * 100;
 
         $query->insert('results', [
-            'lesson_id' => $lessonid,
+            'subject_id' => $subjectid,
             'participant_name' => $participant_name,
             'answered_questions' => $correctAnswersCount,
             'total_questions' => $totalQuestions
@@ -134,7 +101,7 @@ if (isset($_GET['lessonid'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WorkSheet | Task for: <?= $lesson[0]['title'] ?></title>
+        <title>Test | <?= $subjects[0]['title'] ?></title>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 
@@ -374,7 +341,7 @@ if (isset($_GET['lessonid'])) {
 
             <?php $delay = 0 ?>
 
-            <h1 class="title">Task for: <?= $lesson[0]['title'] ?></h1>
+            <h1 class="title">Test: <?= $subjects[0]['title'] ?></h1>
 
             <?php if ($participant_name): ?>
 
@@ -522,35 +489,6 @@ if (isset($_GET['lessonid'])) {
                         </div>
 
                         <div id="delay-animation" style="animation-delay: <?= $delay += 0.1 ?>s">
-                            <?php if (!empty($text_questions)): ?>
-                                <h3 class="title_h3">Question:</h3>
-                                <p style="white-space: pre-wrap;" class="question-text"><?= $text_questions[0]['question_text'] ?></p>
-                                <div class="answers-container">
-                                    <?php foreach ($text_options as $text_index => $text_option) { ?>
-                                        <div id="delay-animation" style="animation-delay: <?= $delay += 0.1 ?>s">
-
-                                            <?php shuffle($text_optionsSelecs); ?>
-
-                                            <div class="answer-option">
-                                                <label for="answer-<?= $text_index ?>"
-                                                    class="answer-label"><?= $text_index + 1 . ") " ?></label>
-                                                <select name="answers[<?= $text_index ?>]" id="answer-<?= $text_index ?>"
-                                                    class="answer-select">
-                                                    <option value="" disabled selected>-- Select Section --</option>
-                                                    <?php foreach ($text_optionsSelecs as $text_optionsSelec) { ?>
-                                                        <option value="<?= $text_optionsSelec['answer_text'] ?>">
-                                                            <?= $text_optionsSelec['answer_text'] ?>
-                                                        </option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    <?php } ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-
-                        <div id="delay-animation" style="animation-delay: <?= $delay += 0.1 ?>s">
                             <input type="submit" value="Submit" class="submit-btn">
                         </div>
                     </form>
@@ -596,7 +534,7 @@ if (isset($_GET['lessonid'])) {
     </html>
 <?php
 } else {
-    header('Location: lessons.php');
+    header('Location: my_tests.php');
     exit();
 }
 ?>

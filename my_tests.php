@@ -8,7 +8,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 include './config.php';
 $query = new Database();
-$subjects = $query->select('subjects', '*') ?>
+$subjects = $query->select('subjects', '*');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
