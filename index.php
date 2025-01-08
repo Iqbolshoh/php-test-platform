@@ -115,14 +115,14 @@
 
         <section class="hero">
             <h1 class="hero__title">Welcome to Test Platform</h1>
-            <p class="hero__subtitle">Test your knowledge, improve your skills, and track your progress.</p>
-            <a href="about.php"><button class="hero__button">Learn More</button></a>
+            <p class="hero__subtitle">Create your own tests, improve your skills, and share them with others.</p>
+            <a href="about.php"><button class="hero__button">Create test</button></a>
         </section>
 
         <br>
 
         <section class="features">
-            <p class="hero__subtitle">Test Platform is designed to provide individuals with a comprehensive platform to test their knowledge in various fields. Whether you're preparing for exams or looking to sharpen your skills, our interactive quizzes and exercises will help you measure your progress and achieve your learning goals. Join us today and start testing your knowledge!</p>
+            <p class="hero__subtitle">Test Platform provides a comprehensive environment where you can create personalized tests on various topics. Whether you're preparing for exams or enhancing your skills, you can design quizzes, share them with others, and track progress. Join us to create, share, and test your knowledge while helping others do the same!</p>
         </section>
 
     </div>
