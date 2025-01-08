@@ -9,16 +9,12 @@
 </head>
 
 <style>
-    body {
-        font-family: 'Poppins', sans-serif;
-    }
-
     .hero {
         width: 100%;
         text-align: center;
-        padding: 5rem 2rem;
-        background: linear-gradient(135deg, #003366, #004d80);
-        color: white;
+        padding: 7rem 2rem;
+        background: #34495e;
+        color: #f39c12;
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -41,7 +37,7 @@
     }
 
     .hero__title {
-        font-size: 3rem;
+        font-size: 4.5rem;
         font-weight: 600;
         margin-bottom: 1.5rem;
         letter-spacing: -1.5px;
@@ -50,18 +46,19 @@
     }
 
     .hero__subtitle {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 400;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         opacity: 0.9;
         letter-spacing: 0.5px;
+        color: #ecf0f1;
     }
 
     .hero__button {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-weight: 600;
-        padding: 1rem 2.5rem;
-        background-color: #0066cc;
+        padding: 1.3rem 3rem;
+        background-color: #e67e22;
         color: white;
         border-radius: 50px;
         border: none;
@@ -72,7 +69,7 @@
     }
 
     .hero__button:hover {
-        background-color: #005bb5;
+        background-color: #d35400;
         transform: scale(1.05);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
@@ -82,10 +79,10 @@
     }
 
     .features {
-        background: linear-gradient(135deg, #004d80, #003366);
+        background: #f39c12;
         color: white;
         text-align: center;
-        padding: 5rem 2rem;
+        padding: 7rem 2rem;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
