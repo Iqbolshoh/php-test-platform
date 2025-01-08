@@ -132,11 +132,8 @@
             <h1 class="hero__title">Welcome to Test Platform</h1>
             <p class="hero__subtitle">Create your own tests, improve your skills, and share them with others.</p>
 
-            <!-- First button: Create Test -->
-            <a href="create_test.php"><button class="hero__button create-test-btn">Create Test</button></a>
-
-            <!-- Second button: Start Test -->
-            <a href="start_test.php"><button class="hero__button start-test-btn">Start Test</button></a>
+            <a href="./admin/"><button class="hero__button create-test-btn">Create Test</button></a>
+            <a href="my_tests.php"><button class="hero__button start-test-btn">My Tests</button></a>
 
         </section>
 
