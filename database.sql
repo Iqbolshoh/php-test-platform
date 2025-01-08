@@ -103,3 +103,11 @@ VALUES
         'iqbolshoh',
         '65c2a32982abe41b1e6ff888d351ee6b7ade33affd4a595667ea7db910aecaa8'
     );
+
+INSERT INTO subjects (user_id, title, description) 
+VALUES
+(1, 'Mathematics', 'Learn advanced mathematics including calculus, algebra, and geometry.'),
+(1, 'Physics', 'Explore the fundamentals of physics, including mechanics, thermodynamics, and optics.'),
+(1, 'Computer Science', 'Study programming, data structures, algorithms, and web development.'),
+(1, 'Chemistry', 'Dive into organic, inorganic, and physical chemistry with hands-on experiments.'),
+(1, 'History', 'Learn about world history from ancient civilizations to modern times.');

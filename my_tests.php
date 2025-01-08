@@ -137,7 +137,7 @@
 
         <section class="section call-to-action">
             <h2 class="section__title">My Tests</h2>
-            <p class="section__content"></p>
+            <p class="section__content">Explore and start learning through various subjects and tests designed to boost your skills.</p>
         </section>
 
         <br>
@@ -158,7 +158,7 @@
                 <h3><?= $subject['title'] ?></h3>
                 <p><?= $subject['description'] ?></p>
                 <a href="subject_detail.php?subjectid=<?= urlencode($subject['id']) ?>">
-                    <button class="btn">Start Learning</button>
+                    <button class="btn">Start</button>
                 </a>
             </div>
         <?php
