@@ -67,13 +67,13 @@
         }
 
         .nav-link:hover {
-            color: #3498db;
+            color: #f39c12;
         }
 
         .nav-logo {
             font-size: 24px;
             font-weight: 600;
-            color: #3498db;
+            color: #f39c12;
             letter-spacing: 1px;
         }
 
@@ -132,7 +132,7 @@
 
         .menu-item:hover,
         .menu-item.active {
-            color: #3498db;
+            color: #f39c12;
             font-weight: bold;
         }
 

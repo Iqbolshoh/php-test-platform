@@ -38,7 +38,7 @@
         background-color: #2c3e50;
         color: #ecf0f1;
         padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-bottom: .5rem;
         margin-top: auto;
         width: 100%;
     }
@@ -59,7 +59,7 @@
         font-size: 2rem;
         margin-bottom: 0.8rem;
         font-weight: 600;
-        color: #3498db;
+        color: #f39c12;
     }
 
     .footer-logo p {
@@ -79,7 +79,7 @@
         font-size: 1.6rem;
         margin-bottom: 1rem;
         font-weight: 600;
-        color: #3498db;
+        color: #f39c12;
     }
 
     .footer-links ul,
@@ -105,7 +105,7 @@
     .footer-links ul li a:hover,
     .footer-social ul li a:hover {
         opacity: 1;
-        color: #3498db;
+        color: #f39c12;
     }
 
     .footer-bottom {
