@@ -2,11 +2,15 @@
 include 'config.php';
 $query = new Database();
 
-if (isset($_GET['subjectid'])) {
-    $subjectid = intval($_GET['subjectid']);
-    $participant_name = $_GET['participant_name'] ?? null;
+if (isset($_GET['link'])) {
+    $link = intval($_GET['link']);
 
     $subjects = $query->select('subjects', '*', "id = ?", [$subjectid], 'i');
+
+    if (empty($subjects)) {
+        header('Location: ./');
+        exit();
+    }
 
     $tests = $query->select('test', '*', "subject_id = ?", [$subjectid], 'i');
     $tru_falses = $query->select('tru_false', '*', "subject_id = ?", [$subjectid], 'i');
@@ -58,7 +62,7 @@ if (isset($_GET['subjectid'])) {
 
         $query->insert('results', [
             'subject_id' => $subjectid,
-            'participant_name' => $participant_name,
+            // 'participant_name' => $participant_name,
             'answered_questions' => $correctAnswersCount,
             'total_questions' => $totalQuestions
         ]);
@@ -454,7 +458,7 @@ if (isset($_GET['subjectid'])) {
     </html>
 <?php
 } else {
-    header('Location: my_tests.php');
+    header('Location: ./');
     exit();
 }
 ?>

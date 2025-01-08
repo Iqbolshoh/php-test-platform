@@ -164,7 +164,7 @@ $subjects = $query->select('subjects', '*');
                 <div class="subject-card" style="animation-delay: <?= $delay ?>s;">
                     <h3><?= $subject['title'] ?></h3>
                     <p><?= $subject['description'] ?></p>
-                    <a href="test.php?subjectid=<?= urlencode($subject['id']) ?>">
+                    <a href="test.php?link=<?= urlencode($query->hashPassword($subject['id'])) ?>">
                         <button class="btn">Start</button>
                     </a>
                 </div>
