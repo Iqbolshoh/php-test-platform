@@ -77,6 +77,22 @@
             letter-spacing: 1px;
         }
 
+        .container {
+            width: 100%;
+            min-height: 50vh;
+            margin: auto;
+            margin-top: 27px;
+            margin-bottom: 40px;
+            padding: 1rem 2rem;
+            border-radius: 11px;
+            background-color: #ffffff;
+        }
+
+        .nav-link.active {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
         @media only screen and (max-width: 768px) {
             header {
                 margin-bottom: 50px;
@@ -89,6 +105,7 @@
                 z-index: 1000;
                 background-color: #2c3e50;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                padding: .7rem 1rem;
             }
 
             .nav-menu {
@@ -98,7 +115,6 @@
                 flex-direction: column;
                 background-color: #34495e;
                 width: 100%;
-                border-radius: 8px;
                 text-align: center;
                 transition: left 300ms ease;
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
@@ -128,26 +144,16 @@
             .lines.active .line:nth-child(3) {
                 transform: translateY(-6px) rotate(-45deg);
             }
+
+            .container {
+                padding: .7rem 1rem;
+                margin-top: 60px;
+                margin-bottom: 30px;
+            }
         }
 
         .menu-item:hover,
         .menu-item.active {
-            color: #f39c12;
-            font-weight: bold;
-        }
-
-        .container {
-            width: 100%;
-            min-height: 50vh;
-            margin: auto;
-            margin-top: 27px;
-            margin-bottom: 40px;
-            padding: 1.2rem 2.5rem;
-            border-radius: 11px;
-            background-color: #ffffff;
-        }
-
-        .nav-link.active {
             color: #f39c12;
             font-weight: bold;
         }
@@ -163,15 +169,9 @@
         ?>
 
         <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="./" class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="about.php" class="nav-link <?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a href="lessons.php" class="nav-link <?php echo ($current_page == 'lessons.php') ? 'active' : ''; ?>">Lessons</a>
-            </li>
+            <li class="nav-item"><a href="./" class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">Home</a></li>
+            <li class="nav-item"><a href="about.php" class="nav-link <?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About Us</a></li>
+            <li class="nav-item"><a href="lessons.php" class="nav-link <?php echo ($current_page == 'lessons.php') ? 'active' : ''; ?>">Lessons</a></li>
         </ul>
 
         <div class="lines">
