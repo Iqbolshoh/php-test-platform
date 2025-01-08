@@ -1,6 +1,6 @@
 <?php include 'config.php' ?>
 <?php $query = new Database(); ?>
-<?php $lessons = $query->select('lessons', '*') ?>
+<?php $subjects = $query->select('subjects', '*') ?>
 
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons - Letter edu</title>
+    <title>My Tests - Test Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         .section {
@@ -32,14 +32,14 @@
             letter-spacing: 0.5px;
         }
 
-        .lessons-list {
+        .subjects-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             justify-items: center;
         }
 
-        .lesson-card {
+        .subject-card {
             background: linear-gradient(135deg, #6c5ce7, #a29bfe);
             padding: 2.5rem;
             border-radius: 15px;
@@ -53,19 +53,19 @@
             animation: slideUpFade 1s ease forwards;
         }
 
-        .lesson-card:hover {
+        .subject-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .lesson-card h3 {
+        .subject-card h3 {
             font-size: 2.2rem;
             color: #fff;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .lesson-card p {
+        .subject-card p {
             font-size: 1.4rem;
             color: #f7f7f7;
             margin-bottom: 2rem;
@@ -75,7 +75,7 @@
         .features {
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 15px;
-            background: linear-gradient(135deg, #ff6b81, #ff9a9e);
+            background: linear-gradient(135deg, #f39c12, #f39c12);
             color: white;
             animation: slideUpFade 1s ease forwards;
         }
@@ -83,7 +83,7 @@
         .call-to-action {
             border-top-right-radius: 15px;
             border-top-left-radius: 15px;
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            background: linear-gradient(135deg, #34495e, #34495e);
             color: white;
             animation: slideUpFade 1s ease forwards;
         }
@@ -136,28 +136,28 @@
     <div class="container">
 
         <section class="section call-to-action">
-            <h2 class="section__title">Our Lessons</h2>
-            <p class="section__content">Explore our lessons designed to help you master the English language at every level. Choose a lesson below to get started!</p>
+            <h2 class="section__title">My Tests</h2>
+            <p class="section__content"></p>
         </section>
 
         <br>
 
         <section class="section features">
-            <p class="section__content">Discover our carefully crafted lessons designed to help you improve your English skills at every level, from beginner to advanced. Whether you're looking to build a solid foundation or enhance your fluency, we’ve got the perfect lesson for you. Start your journey below and unlock your potential to speak and write with confidence!</p>
+            <p class="section__content">D</p>
         </section>
 
     </div>
 
-    <section class="section lessons-list">
+    <section class="section subjects-list">
         <?php
 
         $delay = 0;
 
-        foreach ($lessons as $lesson): ?>
-            <div class="lesson-card" style="animation-delay: <?= $delay ?>s;">
-                <h3><?= $lesson['title'] ?></h3>
-                <p><?= $lesson['description'] ?></p>
-                <a href="lesson_detail.php?lessonid=<?= urlencode($lesson['id']) ?>">
+        foreach ($subjects as $subject): ?>
+            <div class="subject-card" style="animation-delay: <?= $delay ?>s;">
+                <h3><?= $subject['title'] ?></h3>
+                <p><?= $subject['description'] ?></p>
+                <a href="subject_detail.php?subjectid=<?= urlencode($subject['id']) ?>">
                     <button class="btn">Start Learning</button>
                 </a>
             </div>
