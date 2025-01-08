@@ -3,7 +3,7 @@ include 'config.php';
 $query = new Database();
 
 if (isset($_GET['link'])) {
-    $link = intval($_GET['link']);
+    $link = $_GET['link'];
 
     $subjects = $query->select('subjects', '*', "id = ?", [$subjectid], 'i');
 
