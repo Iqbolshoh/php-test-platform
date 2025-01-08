@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Test Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
     .hero {
         width: 100%;
         text-align: center;
-        padding: 7rem 2rem;
-        background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+        padding: 5rem 2rem;
+        background: linear-gradient(135deg, #003366, #004d80);
         color: white;
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
@@ -37,7 +41,7 @@
     }
 
     .hero__title {
-        font-size: 4.5rem;
+        font-size: 3rem;
         font-weight: 600;
         margin-bottom: 1.5rem;
         letter-spacing: -1.5px;
@@ -46,18 +50,18 @@
     }
 
     .hero__subtitle {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 400;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
         opacity: 0.9;
         letter-spacing: 0.5px;
     }
 
     .hero__button {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 600;
-        padding: 1.3rem 3rem;
-        background-color: #ff6b81;
+        padding: 1rem 2.5rem;
+        background-color: #0066cc;
         color: white;
         border-radius: 50px;
         border: none;
@@ -68,7 +72,7 @@
     }
 
     .hero__button:hover {
-        background-color: #d65a71;
+        background-color: #005bb5;
         transform: scale(1.05);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
@@ -78,10 +82,10 @@
     }
 
     .features {
-        background: linear-gradient(135deg, #ff6b81, #ff9a9e);
+        background: linear-gradient(135deg, #004d80, #003366);
         color: white;
         text-align: center;
-        padding: 7rem 2rem;
+        padding: 5rem 2rem;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -113,22 +117,18 @@
     <div class="container">
 
         <section class="hero">
-            <h1 class="hero__title">Welcome to Letter edu</h1>
-            <p class="hero__subtitle">Your trusted platform for online education and services.</p>
-            <a href="about.php"><button class="hero__button">About US</button></a>
+            <h1 class="hero__title">Welcome to Test Platform</h1>
+            <p class="hero__subtitle">Test your knowledge, improve your skills, and track your progress.</p>
+            <a href="about.php"><button class="hero__button">Learn More</button></a>
         </section>
 
         <br>
 
         <section class="features">
-            <p class="hero__subtitle">Letter edu is an online platform dedicated to helping individuals learn English
-                efficiently. Our mission is to provide high-quality education with interactive exercises, vocabulary
-                building, and advanced language skills to help users progress and master the English language. Whether
-                you're a beginner or looking to enhance your proficiency, Letter edu has the right tools to assist you
-                in your learning journey.</p>
+            <p class="hero__subtitle">Test Platform is designed to provide individuals with a comprehensive platform to test their knowledge in various fields. Whether you're preparing for exams or looking to sharpen your skills, our interactive quizzes and exercises will help you measure your progress and achieve your learning goals. Join us today and start testing your knowledge!</p>
         </section>
 
-        </div>
+    </div>
     <?php include 'includes/footer.php' ?>
 </body>
 
