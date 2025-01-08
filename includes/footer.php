@@ -2,8 +2,8 @@
     <div class="max-width-container">
         <div class="footer-content">
             <div class="footer-logo">
-                <h1>Letter edu</h1>
-                <p>Start learning English.</p>
+                <h1>Test Platform</h1>
+                <p>Test your knowledge</p>
             </div>
 
             <div class="footer-links">
@@ -28,7 +28,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Letter edu. All Rights Reserved.</p><br>
+            <p>&copy; 2025 Test Platform. All Rights Reserved.</p><br>
         </div>
     </div>
 </footer>
