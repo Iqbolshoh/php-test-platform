@@ -28,7 +28,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2024 Letter edu. All Rights Reserved.</p><br>
+            <p>&copy; 2025 Letter edu. All Rights Reserved.</p><br>
         </div>
     </div>
 </footer>
@@ -37,13 +37,14 @@
     footer {
         background-color: #2c3e50;
         color: #ecf0f1;
-        padding: 2rem 1rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
         margin-top: auto;
         width: 100%;
     }
 
     .max-width-container {
-        padding: 1rem;
+        padding: 1rem 2rem;
     }
 
     .footer-content {
@@ -51,12 +52,12 @@
         justify-content: space-between;
         width: 100%;
         flex-wrap: wrap;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .footer-logo h1 {
         font-size: 2rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.8rem;
         font-weight: 600;
         color: #3498db;
     }
@@ -64,19 +65,19 @@
     .footer-logo p {
         font-size: 1.2rem;
         opacity: 0.8;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .footer-links,
     .footer-social {
-        /* width: 45%; */
+        width: 30%;
         margin-bottom: 1.5rem;
     }
 
     .footer-links h3,
     .footer-social h3 {
         font-size: 1.6rem;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
         font-weight: 600;
         color: #3498db;
     }
@@ -89,7 +90,7 @@
 
     .footer-links ul li,
     .footer-social ul li {
-        margin: 0.3rem 0;
+        margin: 0.4rem 0;
     }
 
     .footer-links ul li a,
