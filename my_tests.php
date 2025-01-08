@@ -1,7 +1,14 @@
-<?php include 'config.php' ?>
-<?php $query = new Database(); ?>
-<?php $subjects = $query->select('subjects', '*') ?>
+<?php
+session_start();
 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: ./login/");
+    exit;
+}
+
+include './config.php';
+$query = new Database();
+$subjects = $query->select('subjects', '*') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,67 +39,63 @@
             letter-spacing: 0.5px;
         }
 
+        .call-to-action {
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            background: linear-gradient(135deg, #2c3e50, #0f3e5c);
+            color: white;
+            animation: slideUpFade 1s ease forwards;
+        }
+
         .subjects-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
             justify-items: center;
+            padding: 2rem 0;
         }
 
         .subject-card {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            padding: 2.5rem;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #2c3e50, #2980b9);
+            padding: 1.5rem;
+            border-radius: 10px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 100%;
+            max-width: 350px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
             color: white;
             position: relative;
             opacity: 0;
             animation: slideUpFade 1s ease forwards;
+            text-align: center;
+            overflow: hidden;
         }
 
         .subject-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
 
         .subject-card h3 {
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             color: #fff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .subject-card p {
-            font-size: 1.4rem;
+            font-size: 1rem;
             color: #f7f7f7;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
             opacity: 0.9;
         }
 
-        .features {
-            border-bottom-right-radius: 15px;
-            border-bottom-left-radius: 15px;
-            background: linear-gradient(135deg, #f39c12, #f39c12);
-            color: white;
-            animation: slideUpFade 1s ease forwards;
-        }
-
-        .call-to-action {
-            border-top-right-radius: 15px;
-            border-top-left-radius: 15px;
-            background: linear-gradient(135deg, #34495e, #34495e);
-            color: white;
-            animation: slideUpFade 1s ease forwards;
-        }
-
         .btn {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            padding: 1rem 2.5rem;
-            background-color: #ff6b81;
+            padding: 0.8rem 2rem;
+            background-color: #f39c12;
             color: white;
             border-radius: 50px;
             border: none;
@@ -102,7 +105,7 @@
         }
 
         .btn:hover {
-            background-color: #d65a71;
+            background-color: #e67e22;
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
@@ -127,8 +130,17 @@
             .section__content {
                 font-size: 1.4rem;
             }
+
+            .subject-card h3 {
+                font-size: 1.8rem;
+            }
+
+            .subject-card p {
+                font-size: 1.1rem;
+            }
         }
     </style>
+
 </head>
 
 <body>
@@ -142,31 +154,29 @@
 
         <br>
 
-        <section class="section features">
-            <p class="section__content">D</p>
+        <section class="section subjects-list">
+            <?php
+
+            $delay = 0;
+
+            foreach ($subjects as $subject): ?>
+                <div class="subject-card" style="animation-delay: <?= $delay ?>s;">
+                    <h3><?= $subject['title'] ?></h3>
+                    <p><?= $subject['description'] ?></p>
+                    <a href="test.php?subjectid=<?= urlencode($subject['id']) ?>">
+                        <button class="btn">Start</button>
+                    </a>
+                </div>
+            <?php
+                $delay += 0.3;
+            endforeach;
+
+            ?>
         </section>
 
     </div>
 
-    <section class="section subjects-list">
-        <?php
 
-        $delay = 0;
-
-        foreach ($subjects as $subject): ?>
-            <div class="subject-card" style="animation-delay: <?= $delay ?>s;">
-                <h3><?= $subject['title'] ?></h3>
-                <p><?= $subject['description'] ?></p>
-                <a href="subject_detail.php?subjectid=<?= urlencode($subject['id']) ?>">
-                    <button class="btn">Start</button>
-                </a>
-            </div>
-        <?php
-            $delay += 0.3;
-        endforeach;
-
-        ?>
-    </section>
 
     <?php include 'includes/footer.php' ?>
 </body>
