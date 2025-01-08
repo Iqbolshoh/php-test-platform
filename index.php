@@ -58,18 +58,33 @@
         font-size: 1.7rem;
         font-weight: 600;
         padding: 1.3rem 3rem;
-        background-color: #e67e22;
-        color: white;
         border-radius: 50px;
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
         letter-spacing: 1px;
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        margin: 10px;
     }
 
-    .hero__button:hover {
+    .create-test-btn {
+        background-color: #e67e22;
+        color: white;
+    }
+
+    .create-test-btn:hover {
         background-color: #d35400;
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .start-test-btn {
+        background-color: #3498db;
+        color: white;
+    }
+
+    .start-test-btn:hover {
+        background-color: #2980b9;
         transform: scale(1.05);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
@@ -116,7 +131,13 @@
         <section class="hero">
             <h1 class="hero__title">Welcome to Test Platform</h1>
             <p class="hero__subtitle">Create your own tests, improve your skills, and share them with others.</p>
-            <a href="about.php"><button class="hero__button">Create test</button></a>
+
+            <!-- First button: Create Test -->
+            <a href="create_test.php"><button class="hero__button create-test-btn">Create Test</button></a>
+
+            <!-- Second button: Start Test -->
+            <a href="start_test.php"><button class="hero__button start-test-btn">Start Test</button></a>
+
         </section>
 
         <br>
