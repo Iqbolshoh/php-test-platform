@@ -15,17 +15,19 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS lessons (
+CREATE TABLE IF NOT EXISTS subjects (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
     title VARCHAR(100) NOT NULL,
-    description VARCHAR(255) NOT NULL
+    description VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS test (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    lesson_id INT,
+    subject_id INT,
     question TEXT NOT NULL,
-    FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS test_options (
@@ -38,45 +40,45 @@ CREATE TABLE IF NOT EXISTS test_options (
 
 CREATE TABLE IF NOT EXISTS tru_false (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    lesson_id INT,
+    subject_id INT,
     statement TEXT NOT NULL,
     is_true BOOLEAN NOT NULL,
-    FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS dropdown (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    lesson_id INT,
+    subject_id INT,
     question TEXT NOT NULL,
     correct_answer VARCHAR(255) NOT NULL,
-    FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS fill_in_the_blank (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    lesson_id INT,
+    subject_id INT,
     sentence TEXT NOT NULL,
     correct_answer VARCHAR(255) NOT NULL,
-    FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS results (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    lesson_id INT,
+    subject_id INT,
     participant_name VARCHAR(255) NOT NULL,
     total_questions INT NOT NULL,
     answered_questions INT NOT NULL,
-    FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
 );
 
-CREATE TABLE questions (
+CREATE TABLE IF NOT EXISTS questions (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    lesson_id INT,
+    subject_id INT,
     question_text TEXT NOT NULL,
-    FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
 );
 
-CREATE TABLE answers (
+CREATE TABLE IF NOT EXISTS answers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     question_id INT,
     answer_text VARCHAR(255) NOT NULL,
@@ -85,7 +87,6 @@ CREATE TABLE answers (
 
 -- Login: iqbolshoh
 -- Password: 1
-
 INSERT INTO
     users (
         first_name,

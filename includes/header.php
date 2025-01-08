@@ -170,8 +170,8 @@
 
         <ul class="nav-menu">
             <li class="nav-item"><a href="./" class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">Home</a></li>
-            <li class="nav-item"><a href="about.php" class="nav-link <?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About Us</a></li>
-            <li class="nav-item"><a href="lessons.php" class="nav-link <?php echo ($current_page == 'lessons.php') ? 'active' : ''; ?>">Lessons</a></li>
+            <li class="nav-item"><a href="./admin/" class="nav-link">Create Test</a></li>
+            <li class="nav-item"><a href="my_tests.php" class="nav-link <?php echo ($current_page == 'my_tests.php') ? 'active' : ''; ?>">My Tests</a></li>
         </ul>
 
         <div class="lines">
