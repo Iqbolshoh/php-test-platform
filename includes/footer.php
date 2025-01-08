@@ -37,14 +37,13 @@
     footer {
         background-color: #2c3e50;
         color: #ecf0f1;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding: 2rem 1rem;
         margin-top: auto;
         width: 100%;
     }
 
     .max-width-container {
-        padding: 1.2rem 2.5rem;
+        padding: 1rem;
     }
 
     .footer-content {
@@ -52,36 +51,34 @@
         justify-content: space-between;
         width: 100%;
         flex-wrap: wrap;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .footer-logo h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
         font-weight: 600;
         color: #3498db;
-        /* Accent color */
     }
 
     .footer-logo p {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         opacity: 0.8;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .footer-links,
     .footer-social {
-        width: 30%;
-        margin-bottom: 2rem;
+        /* width: 45%; */
+        margin-bottom: 1.5rem;
     }
 
     .footer-links h3,
     .footer-social h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
         font-weight: 600;
         color: #3498db;
-        /* Accent color */
     }
 
     .footer-links ul,
@@ -92,15 +89,14 @@
 
     .footer-links ul li,
     .footer-social ul li {
-        margin: 0.5rem 0;
+        margin: 0.3rem 0;
     }
 
     .footer-links ul li a,
     .footer-social ul li a {
         text-decoration: none;
         color: #ecf0f1;
-        /* Light text color */
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         opacity: 0.8;
         transition: opacity 0.3s;
     }
@@ -109,14 +105,12 @@
     .footer-social ul li a:hover {
         opacity: 1;
         color: #3498db;
-        /* Accent color */
     }
 
     .footer-bottom {
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #ecf0f1;
-        /* Light text color */
     }
 
     @media (max-width: 768px) {

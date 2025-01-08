@@ -31,8 +31,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 16px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
         }
 
         .lines {
@@ -56,7 +56,7 @@
         }
 
         .nav-item {
-            margin-right: 30px;
+            margin-left: 30px;
         }
 
         .nav-link {
