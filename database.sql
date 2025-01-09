@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS subjects (
     user_id INT,
     title VARCHAR(100) NOT NULL,
     description VARCHAR(255) NOT NULL,
+    link VARCHAR(255) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
