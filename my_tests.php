@@ -150,7 +150,8 @@ $subjects = $query->select('subjects', '*');
 
         <section class="section call-to-action">
             <h2 class="section__title">My Tests</h2>
-            <p class="section__content">Explore and start learning through various subjects and tests designed to boost your skills.</p>
+            <p class="section__content">Explore and start learning through various subjects and tests designed to boost
+                your skills.</p>
         </section>
 
         <br>
@@ -164,11 +165,11 @@ $subjects = $query->select('subjects', '*');
                 <div class="subject-card" style="animation-delay: <?= $delay ?>s;">
                     <h3><?= $subject['title'] ?></h3>
                     <p><?= $subject['description'] ?></p>
-                    <a href="test.php?subjectid=<?= urlencode($subject['id']) ?>">
+                    <a href="test.php?url=<?= urlencode($subject['url']) ?>">
                         <button class="btn">Start</button>
                     </a>
                 </div>
-            <?php
+                <?php
                 $delay += 0.3;
             endforeach;
 
