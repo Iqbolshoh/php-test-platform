@@ -100,32 +100,37 @@ VALUES
     );
 
 INSERT INTO
-    subjects (user_id, title, description)
+    subjects (user_id, title, description, link)
 VALUES
     (
         1,
         'Mathematics',
-        'Learn advanced mathematics including calculus, algebra, and geometry.'
+        'Learn advanced mathematics including calculus, algebra, and geometry.',
+        'https://example.com/mathematics'
     ),
     (
         1,
         'Physics',
-        'Explore the fundamentals of physics, including mechanics, thermodynamics, and optics.'
+        'Explore the fundamentals of physics, including mechanics, thermodynamics, and optics.',
+        'https://example.com/physics'
     ),
     (
         1,
         'Computer Science',
-        'Study programming, data structures, algorithms, and web development.'
+        'Study programming, data structures, algorithms, and web development.',
+        'https://example.com/computer-science'
     ),
     (
         1,
         'Chemistry',
-        'Dive into organic, inorganic, and physical chemistry with hands-on experiments.'
+        'Dive into organic, inorganic, and physical chemistry with hands-on experiments.',
+        'https://example.com/chemistry'
     ),
     (
         1,
         'History',
-        'Learn about world history from ancient civilizations to modern times.'
+        'Learn about world history from ancient civilizations to modern times.',
+        'https://example.com/history'
     );
 
 -- Inserting test questions into the 'test' table
