@@ -2,15 +2,17 @@
 include 'config.php';
 $query = new Database();
 
-if (isset($_GET['link'])) {
-    $link = $_GET['link'];
+if (isset($_GET['url'])) {
+    $url = $_GET['url'];
 
-    $subjects = $query->select('subjects', '*', "id = ?", [$subjectid], 'i');
+    $subject = $query->select('subjects', '*', "url = ?", [$url], 's');
 
-    if (empty($subjects)) {
+    if (empty($subject)) {
         header('Location: ./');
         exit();
     }
+
+    $subjectid = $subject[0]['id'];
 
     $tests = $query->select('test', '*', "subject_id = ?", [$subjectid], 'i');
     $tru_falses = $query->select('tru_false', '*', "subject_id = ?", [$subjectid], 'i');
@@ -60,15 +62,15 @@ if (isset($_GET['link'])) {
         $totalQuestions = count($tests) + count($tru_falses) + count($dropdowns) + count($fill_in_the_blanks);
         $percentage = ($correctAnswersCount / $totalQuestions) * 100;
 
-        $query->insert('results', [
-            'subject_id' => $subjectid,
-            // 'participant_name' => $participant_name,
-            'answered_questions' => $correctAnswersCount,
-            'total_questions' => $totalQuestions
-        ]);
-?>
+        // $query->insert('results', [
+        //     'subject_id' => $subjectid,
+        //     // 'participant_name' => $participant_name,
+        //     'answered_questions' => $correctAnswersCount,
+        //     'total_questions' => $totalQuestions
+        // ]);
+        ?>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("DOMContentLoaded", function () {
                 var correctAnswersCount = <?php echo $correctAnswersCount; ?>;
                 var totalQuestions = <?php echo $totalQuestions; ?>;
                 var percentage = <?php echo $percentage; ?>;
@@ -86,7 +88,7 @@ if (isset($_GET['link'])) {
                 });
             });
         </script>
-    <?php
+        <?php
     }
     ?>
 
@@ -96,7 +98,7 @@ if (isset($_GET['link'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Test | <?= $subjects[0]['title'] ?></title>
+        <title>Test | <?= $subject[0]['title'] ?></title>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 
@@ -336,7 +338,7 @@ if (isset($_GET['link'])) {
 
             <?php $delay = 0 ?>
 
-            <h1 class="title">Test: <?= $subjects[0]['title'] ?></h1>
+            <h1 class="title">Test: <?= $subject[0]['title'] ?></h1>
 
             <?php if (!empty($tests) || !empty($tru_falses) || !empty($dropdowns) || !empty($fill_in_the_blanks)): ?>
                 <form method="post">
@@ -349,7 +351,7 @@ if (isset($_GET['link'])) {
                                     $testid = $test['id'];
                                     $options = $query->select('test_options', '*', "test_id = $testid");
                                     shuffle($options);
-                                ?>
+                                    ?>
                                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.1 ?>s">
                                         <label for="test_question_<?= $testid; ?>">
                                             <p style="white-space: pre-wrap;"><?= ($index + 1) . ')   ' . $test['question'] ?></p>
@@ -456,7 +458,7 @@ if (isset($_GET['link'])) {
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header('Location: ./');
     exit();
