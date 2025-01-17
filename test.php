@@ -149,7 +149,6 @@ if (isset($_GET['url'])) {
         form {
             margin: 0 auto;
             width: 100%;
-            max-width: 800px;
             padding: 20px;
             border-radius: 8px;
             background-color: #ffffff;
