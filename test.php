@@ -433,7 +433,7 @@ if (isset($_GET['url'])) {
                         <?php if (!empty($fill_in_the_blanks)): ?>
                             <h3 class="title_h3">Fill in the Blank Questions</h3>
                             <div class="task_item">
-                                <?php foreach ($fill_in_the_blanks as $index => $blank): ?>
+                                <?php foreach ($fill_in_the_blanks as $blank): ?>
                                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
                                         <label for="fill_in_the_blank_<?= $blank['id']; ?>">
                                             <p style="white-space: pre-wrap;"><?= ($index + 1) . ')   ' . $blank['sentence'] ?> </p>
