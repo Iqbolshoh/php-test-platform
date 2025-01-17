@@ -371,6 +371,8 @@ if (isset($_GET['url'])) {
                 <p class="section__content"><?= $subject[0]['description'] ?></p>
             </section>
 
+            <br>
+
             <?php if (!empty($tests) || !empty($tru_falses) || !empty($dropdowns) || !empty($fill_in_the_blanks)): ?>
                 <form method="post">
 
