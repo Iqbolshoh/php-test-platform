@@ -335,7 +335,8 @@ if (isset($_GET['url'])) {
         <?php include 'includes/header.php' ?>
         <div class="container">
 
-            <?php $delay = 0 ?>
+            <?php $delay = 0; ?>
+            <?php $test_count = 0 ?>
 
             <h1 class="title">Test: <?= $subject[0]['title'] ?></h1>
 
