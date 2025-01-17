@@ -137,6 +137,7 @@ if (isset($_GET['url'])) {
             margin-top: 20px;
             margin-bottom: 20px;
             text-transform: uppercase;
+            font-style: italic;
             letter-spacing: 1px;
             transform: translateY(0);
             opacity: 0;
@@ -339,6 +340,9 @@ if (isset($_GET['url'])) {
             <?php $test_count = 1 ?>
 
             <h1 class="title">Test: <?= $subject[0]['title'] ?></h1>
+            <p class="words">
+            <?= $subject[0]['description'] ?>
+            </p>
 
             <?php if (!empty($tests) || !empty($tru_falses) || !empty($dropdowns) || !empty($fill_in_the_blanks)): ?>
                 <form method="post">
@@ -413,7 +417,8 @@ if (isset($_GET['url'])) {
                                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
                                         <?php shuffle($dropdownOptions); ?>
                                         <label for="dropdown_question_<?= $dropdown['id']; ?>">
-                                            <p style="white-space: pre-wrap;"><?= ($test_count++) . ')   ' . $dropdown['question'] ?></p>
+                                            <p style="white-space: pre-wrap;"><?= ($test_count++) . ')   ' . $dropdown['question'] ?>
+                                            </p>
                                         </label><br>
                                         <select name="dropdown_answer_<?= $dropdown['id']; ?>"
                                             id="dropdown_question_<?= $dropdown['id']; ?>" class="dropdown">
