@@ -345,7 +345,7 @@ if (isset($_GET['url'])) {
             </p>
 
             <section class="section call-to-action">
-                <h2 class="section__title">My Tests</h2>
+                <h2 class="section__title"><?= $subject[0]['title'] ?></h2>
                 <p class="section__content">Explore and start learning through various subjects and tests designed to boost
                     your skills.</p>
             </section>
