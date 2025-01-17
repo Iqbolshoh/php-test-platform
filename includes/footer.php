@@ -20,9 +20,9 @@
             <div class="footer-social">
                 <h3>Follow Us</h3>
                 <ul>
+                    <li><a href="https://t.me/iqbolshoh_777 " target="_blank">Telegram</a></li>
                     <li><a href="https://www.instagram.com/iqbolshoh_777" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/iiqbolshoh/" target="_blank">Twitter</a></li>
-                    <li><a href="https://www.facebook.com/iqbolshoh_777 " target="_blank">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/in/iiqbolshoh/" target="_blank">X</a></li>
                     <li><a href="https://www.linkedin.com/in/iqbolshoh_777" target="_blank">LinkedIn</a></li>
                 </ul>
             </div>
