@@ -378,7 +378,7 @@ if (isset($_GET['url'])) {
                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
                         <?php if (!empty($tests)): ?>
                             <h3 class="title_h3" style="animation-delay: <?= $delay ?>s">Test Questions</h3>
-                            <div class="task_item" style="animation-delay: <?= $delay += 0.05 ?>s">
+                            <div class="task_item" style="animation-delay: <?= $delay ?>s">
                                 <?php foreach ($tests as $test):
                                     $testid = $test['id'];
                                     $options = $query->select('test_options', '*', "test_id = $testid");
