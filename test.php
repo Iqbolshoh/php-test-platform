@@ -341,7 +341,7 @@ if (isset($_GET['url'])) {
 
             <h1 class="title">Test: </h1>
             <p class="words">
-                <?= $subject[0]['description'] ?>
+                
             </p>
 
             <section class="section call-to-action">
