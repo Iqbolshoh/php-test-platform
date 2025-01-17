@@ -122,6 +122,13 @@ if (isset($_GET['url'])) {
             letter-spacing: 0.5px;
         }
 
+        .call-to-action {
+            border-radius: 15px;
+            background: linear-gradient(135deg, #2c3e50, #0f3e5c);
+            color: white;
+            animation: slideUpFade 1s ease forwards;
+        }
+
         .container {
             transform: translateY(0);
             opacity: 0;
