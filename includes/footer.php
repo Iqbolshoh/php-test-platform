@@ -21,8 +21,8 @@
                 <h3>Follow Us</h3>
                 <ul>
                     <li><a href="https://www.instagram.com/iqbolshoh_777" target="_blank">Instagram</a></li>
-                    <li><a href="https://twitter.com/iqbolshoh_777" target="_blank">Twitter</a></li>
-                    <li><a href="https://www.facebook.com/iqbolshoh_777" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/in/iiqbolshoh/" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/iqbolshoh_777 " target="_blank">Facebook</a></li>
                     <li><a href="https://www.linkedin.com/in/iqbolshoh_777" target="_blank">LinkedIn</a></li>
                 </ul>
             </div>
