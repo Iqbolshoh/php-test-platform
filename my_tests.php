@@ -33,8 +33,7 @@ $subjects = $query->select('subjects', '*');
         }
 
         .call-to-action {
-            border-top-right-radius: 15px;
-            border-top-left-radius: 15px;
+            border-radius: 15px;
             background: linear-gradient(135deg, #2c3e50, #0f3e5c);
             color: white;
             animation: slideUpFade 1s ease forwards;
