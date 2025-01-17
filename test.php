@@ -103,6 +103,25 @@ if (isset($_GET['url'])) {
     </head>
 
     <style>
+        .section {
+            padding: 3rem 0rem;
+            text-align: center;
+        }
+
+        .section__title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .section__content {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
         .container {
             transform: translateY(0);
             opacity: 0;
