@@ -14,27 +14,27 @@ $subjects = $query->select('subjects', '*');
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         .section {
-            padding: 5rem 2rem;
+            padding: 40px 15px;
             text-align: center;
         }
 
         .section__title {
-            font-size: 3rem;
+            font-size: 36px;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
         }
 
         .section__content {
-            font-size: 1.6rem;
+            font-size: 18px;
             font-weight: 400;
-            margin-bottom: 2.5rem;
+            margin-bottom: 30px;
             opacity: 0.9;
             letter-spacing: 0.5px;
         }
 
         .call-to-action {
-            border-top-right-radius: 15px;
-            border-top-left-radius: 15px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
             background: linear-gradient(135deg, #2c3e50, #0f3e5c);
             color: white;
             animation: slideUpFade 1s ease forwards;
@@ -42,19 +42,19 @@ $subjects = $query->select('subjects', '*');
 
         .subjects-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
             justify-items: center;
-            padding: 2rem 0;
+            padding: 20px 0;
         }
 
         .subject-card {
             background: linear-gradient(135deg, #2c3e50, #2980b9);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 350px;
+            max-width: 300px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             color: white;
             position: relative;
@@ -65,29 +65,29 @@ $subjects = $query->select('subjects', '*');
         }
 
         .subject-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .subject-card h3 {
-            font-size: 1.6rem;
+            font-size: 18px;
             color: #fff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 12px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .subject-card p {
-            font-size: 1rem;
+            font-size: 14px;
             color: #f7f7f7;
-            margin-bottom: 1.5rem;
+            margin-bottom: 15px;
             line-height: 1.4;
             opacity: 0.9;
         }
 
         .btn {
-            font-size: 1.2rem;
+            font-size: 16px;
             font-weight: 600;
-            padding: 0.8rem 2rem;
+            padding: 12px 24px;
             background-color: #f39c12;
             color: white;
             border-radius: 50px;
@@ -117,19 +117,24 @@ $subjects = $query->select('subjects', '*');
 
         @media (max-width: 768px) {
             .section__title {
-                font-size: 2.5rem;
+                font-size: 28px;
             }
 
             .section__content {
-                font-size: 1.4rem;
+                font-size: 16px;
             }
 
             .subject-card h3 {
-                font-size: 1.8rem;
+                font-size: 16px;
             }
 
             .subject-card p {
-                font-size: 1.1rem;
+                font-size: 12px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 10px 20px;
             }
         }
     </style>
@@ -169,8 +174,6 @@ $subjects = $query->select('subjects', '*');
         </section>
 
     </div>
-
-
 
     <?php include 'includes/footer.php' ?>
 </body>
