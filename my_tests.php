@@ -170,8 +170,6 @@ $subjects = $query->select('subjects', '*');
 
     </div>
 
-
-
     <?php include 'includes/footer.php' ?>
 </body>
 
