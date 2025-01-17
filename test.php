@@ -151,7 +151,7 @@ if (isset($_GET['url'])) {
             width: 100%;
             padding: 20px;
             border-radius: 8px;
-            background-color: #f39c12;
+            background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
