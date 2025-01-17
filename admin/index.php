@@ -1,4 +1,5 @@
 <?php include 'auth.php'?>
+
 <?
 
 $user = $query->select('users', '*')[0];
