@@ -339,10 +339,16 @@ if (isset($_GET['url'])) {
             <?php $delay = 0; ?>
             <?php $test_count = 1 ?>
 
-            <h1 class="title">Test: <?= $subject[0]['title'] ?></h1>
+            <h1 class="title">Test: </h1>
             <p class="words">
-            <?= $subject[0]['description'] ?>
+                <?= $subject[0]['description'] ?>
             </p>
+
+            <section class="section call-to-action">
+                <h2 class="section__title">My Tests</h2>
+                <p class="section__content">Explore and start learning through various subjects and tests designed to boost
+                    your skills.</p>
+            </section>
 
             <?php if (!empty($tests) || !empty($tru_falses) || !empty($dropdowns) || !empty($fill_in_the_blanks)): ?>
                 <form method="post">
