@@ -411,7 +411,7 @@ if (isset($_GET['url'])) {
                             <div class="task_item">
                                 <?php foreach ($tru_falses as $tru_false): ?>
                                     <div id="delay-animation" style="animation-delay: <?= $delay ?>s">
-                                        <label for="tru_false_statement_<?= $tru_false['id']; ?>"> += 0.05
+                                        <label for="tru_false_statement_<?= $tru_false['id']; ?>">
                                             <p style="white-space: pre-wrap;"> <?= ($test_count++) . ')   ' . $tru_false['statement'] ?>
                                             </p>
                                         </label><br>
