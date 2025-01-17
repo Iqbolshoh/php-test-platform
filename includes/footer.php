@@ -22,7 +22,7 @@
                 <ul>
                     <li><a href="https://t.me/iqbolshoh_777 " target="_blank">Telegram</a></li>
                     <li><a href="https://www.instagram.com/iqbolshoh_777" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/iiqbolshoh/" target="_blank">X</a></li>
+                    <li><a href="https://x.com/iqbolshoh_777" target="_blank">X</a></li>
                     <li><a href="https://www.linkedin.com/in/iqbolshoh_777" target="_blank">LinkedIn</a></li>
                 </ul>
             </div>
