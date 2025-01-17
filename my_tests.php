@@ -14,7 +14,7 @@ $subjects = $query->select('subjects', '*');
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         .section {
-            padding: 5rem 2rem;
+            padding: 3rem 0rem;
             text-align: center;
         }
 
