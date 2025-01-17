@@ -43,7 +43,7 @@
         .line {
             display: block;
             width: 30px;
-            height: 4px;
+            height: 3px;
             margin: 6px auto;
             transition: all 300ms ease-in-out;
             background-color: #ecf0f1;
