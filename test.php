@@ -339,10 +339,6 @@ if (isset($_GET['url'])) {
             <?php $delay = 0; ?>
             <?php $test_count = 1 ?>
 
-            <h1 class="title">Test: </h1>
-            <p class="words">
-                
-            </p>
 
             <section class="section call-to-action">
                 <h2 class="section__title"><?= $subject[0]['title'] ?></h2>
