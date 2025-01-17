@@ -22,7 +22,6 @@ $subjects = $query->select('subjects', '*');
             font-size: 3rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            letter-spacing: -1.5px;
         }
 
         .section__content {
