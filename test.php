@@ -258,8 +258,7 @@ if (isset($_GET['url'])) {
 
         hr {
             border: none;
-            border-top: 2px solid #ddd;
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         @media screen and (max-width: 768px) {
