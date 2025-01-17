@@ -436,7 +436,7 @@ if (isset($_GET['url'])) {
                                 <?php foreach ($fill_in_the_blanks as $blank): ?>
                                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
                                         <label for="fill_in_the_blank_<?= $blank['id']; ?>">
-                                            <p style="white-space: pre-wrap;"><?= ($index + 1) . ')   ' . $blank['sentence'] ?> </p>
+                                            <p style="white-space: pre-wrap;"><?= ($test_count++) . ')   ' . $blank['sentence'] ?> </p>
                                         </label><br>
                                         <input type="text" name="fill_in_the_blank_answer_<?= $blank['id']; ?>"
                                             placeholder="Enter your answer"><br>
