@@ -45,7 +45,7 @@
     }
 
     .hero__subtitle {
-        font-size: 1.8rem;
+        font-size: 22px;
         font-weight: 400;
         margin-bottom: 2.5rem;
         opacity: 0.9;
@@ -54,9 +54,9 @@
     }
 
     .hero__button {
-        font-size: 1.7rem;
+        font-size: 20px;
         font-weight: 600;
-        padding: 1.3rem 3rem;
+        padding: 1rem 2rem;
         border-radius: 50px;
         border: none;
         cursor: pointer;
