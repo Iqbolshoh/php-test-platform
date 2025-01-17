@@ -242,7 +242,7 @@ if (isset($_GET['url'])) {
         .submit-btn {
             padding: 16px 32px;
             font-size: 18px;
-            background-color: #f39c12;
+            background-color: #2c3e50;
             color: white;
             border: none;
             border-radius: 5px;
@@ -253,7 +253,7 @@ if (isset($_GET['url'])) {
         }
 
         .submit-btn:hover {
-            background-color: rgb(207, 129, 4);
+            background-color: #0f3e5c;
         }
 
         hr {
