@@ -410,7 +410,7 @@ if (isset($_GET['url'])) {
                             <h3 class="title_h3">True/False Questions</h3>
                             <div class="task_item">
                                 <?php foreach ($tru_falses as $tru_false): ?>
-                                    <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
+                                    <div id="delay-animation" style="animation-delay: <?= $delay ?>s">
                                         <label for="tru_false_statement_<?= $tru_false['id']; ?>">
                                             <p style="white-space: pre-wrap;"> <?= ($test_count++) . ')   ' . $tru_false['statement'] ?>
                                             </p>
