@@ -12,12 +12,12 @@
     .hero {
         width: 100%;
         text-align: center;
-        padding: 120px 32px;
+        padding: 60px 20px;
         background: #34495e;
         color: #f39c12;
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         margin: 0 auto;
         transform: translateY(0);
         opacity: 0;
@@ -27,7 +27,7 @@
     @keyframes fadeInUp {
         0% {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(30px);
         }
 
         100% {
@@ -37,32 +37,32 @@
     }
 
     .hero__title {
-        font-size: 72px;
+        font-size: 48px;
         font-weight: 600;
-        margin-bottom: 24px;
-        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         line-height: 1.2;
     }
 
     .hero__subtitle {
-        font-size: 28px;
+        font-size: 22px;
         font-weight: 400;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         opacity: 0.9;
         letter-spacing: 1px;
         color: #ecf0f1;
     }
 
     .hero__button {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 600;
-        padding: 16px 32px;
+        padding: 14px 28px;
         border-radius: 50px;
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
         letter-spacing: 1px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         margin: 10px;
     }
 
@@ -96,10 +96,10 @@
         background: #f39c12;
         color: white;
         text-align: center;
-        padding: 120px 32px;
+        padding: 60px 20px;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         width: 100%;
         margin: 0 auto;
         transform: translateY(0);
@@ -109,15 +109,15 @@
 
     @media (max-width: 768px) {
         .hero__title {
-            font-size: 48px;
+            font-size: 36px;
         }
 
         .hero__subtitle {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .hero__button {
-            font-size: 18px;
+            font-size: 16px;
             padding: 12px 24px;
         }
     }
