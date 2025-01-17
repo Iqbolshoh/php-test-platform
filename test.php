@@ -112,7 +112,7 @@ if (isset($_GET['url'])) {
         .title {
             color: #2c3e50;
             text-align: center;
-            font-size: 3rem;
+            font-size: 36px;
             margin-bottom: 30px;
             letter-spacing: 2px;
             transform: translateY(0);
@@ -123,7 +123,7 @@ if (isset($_GET['url'])) {
         form {
             margin: 0 auto;
             width: 100%;
-            max-width: 900px;
+            max-width: 800px;
             padding: 20px;
             border-radius: 8px;
             background-color: #ffffff;
@@ -133,8 +133,8 @@ if (isset($_GET['url'])) {
         .title_h3 {
             color: #f39c12;
             text-align: center;
-            font-size: 2.2rem;
-            margin-top: 17px;
+            font-size: 24px;
+            margin-top: 20px;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -157,7 +157,7 @@ if (isset($_GET['url'])) {
 
         .task_item label {
             font-weight: 600;
-            font-size: 1.5rem;
+            font-size: 18px;
             margin-bottom: 15px;
             display: block;
         }
@@ -166,10 +166,10 @@ if (isset($_GET['url'])) {
         .task_item select,
         .task_item input[type="text"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 1.5rem;
+            font-size: 16px;
             margin-top: 8px;
             box-sizing: border-box;
             transition: all 0.3s ease;
@@ -190,7 +190,7 @@ if (isset($_GET['url'])) {
         }
 
         .task_item .question-number {
-            font-size: 1.5rem;
+            font-size: 18px;
             font-weight: bold;
             color: #f39c12;
             margin-right: 10px;
@@ -213,8 +213,8 @@ if (isset($_GET['url'])) {
         }
 
         .submit-btn {
-            padding: 14px 30px;
-            font-size: 1.5rem;
+            padding: 16px 32px;
+            font-size: 18px;
             background-color: #f39c12;
             color: white;
             border: none;
@@ -242,11 +242,11 @@ if (isset($_GET['url'])) {
             }
 
             .title {
-                font-size: 2rem;
+                font-size: 24px;
             }
 
             .submit-btn {
-                font-size: 1.5rem;
+                font-size: 16px;
             }
 
             .task_item {
@@ -254,7 +254,7 @@ if (isset($_GET['url'])) {
             }
 
             .task_item label {
-                font-size: 1.5rem;
+                font-size: 16px;
             }
 
             .task_item input[type="radio"],
@@ -269,7 +269,7 @@ if (isset($_GET['url'])) {
         }
 
         .word {
-            font-size: 1.5rem;
+            font-size: 16px;
             display: inline-block;
             padding: 5px 10px;
             margin: 5px;
@@ -279,26 +279,25 @@ if (isset($_GET['url'])) {
             cursor: pointer;
         }
 
-
         .question-text {
-            font-size: 1.7rem;
+            font-size: 18px;
             margin-bottom: 20px;
             text-align: justify;
             line-height: 1.6;
         }
 
         .answer-option {
-            font-size: 1.7rem;
+            font-size: 18px;
             text-align: justify;
             line-height: 1.6;
             margin-bottom: 9px;
         }
 
         .answer-select {
-            padding: 7px;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 1.5rem;
+            font-size: 16px;
             box-sizing: border-box;
             transition: all 0.3s ease;
             display: inline-block;
