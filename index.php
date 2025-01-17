@@ -12,7 +12,7 @@
     .hero {
         width: 100%;
         text-align: center;
-        padding: 7rem 2rem;
+        padding: 120px 32px;
         background: #34495e;
         color: #f39c12;
         border-top-right-radius: 15px;
@@ -37,26 +37,26 @@
     }
 
     .hero__title {
-        font-size: 45px;
+        font-size: 72px;
         font-weight: 600;
-        margin-bottom: 1.5rem;
+        margin-bottom: 24px;
         text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
         line-height: 1.2;
     }
 
     .hero__subtitle {
-        font-size: 22px;
+        font-size: 28px;
         font-weight: 400;
-        margin-bottom: 2.5rem;
+        margin-bottom: 40px;
         opacity: 0.9;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
         color: #ecf0f1;
     }
 
     .hero__button {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 600;
-        padding: 1rem 2rem;
+        padding: 16px 32px;
         border-radius: 50px;
         border: none;
         cursor: pointer;
@@ -96,7 +96,7 @@
         background: #f39c12;
         color: white;
         text-align: center;
-        padding: 7rem 2rem;
+        padding: 120px 32px;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -109,16 +109,16 @@
 
     @media (max-width: 768px) {
         .hero__title {
-            font-size: 2.5rem;
+            font-size: 48px;
         }
 
         .hero__subtitle {
-            font-size: 1.4rem;
+            font-size: 20px;
         }
 
         .hero__button {
-            font-size: 1.4rem;
-            padding: 1rem 2rem;
+            font-size: 18px;
+            padding: 12px 24px;
         }
     }
 </style>
@@ -139,7 +139,10 @@
         <br>
 
         <section class="features">
-            <p class="hero__subtitle">Test Platform provides a comprehensive environment where you can create personalized tests on various topics. Whether you're preparing for exams or enhancing your skills, you can design quizzes, share them with others, and track progress. Join us to create, share, and test your knowledge while helping others do the same!</p>
+            <p class="hero__subtitle">Test Platform provides a comprehensive environment where you can create
+                personalized tests on various topics. Whether you're preparing for exams or enhancing your skills, you
+                can design quizzes, share them with others, and track progress. Join us to create, share, and test your
+                knowledge while helping others do the same!</p>
         </section>
 
     </div>
