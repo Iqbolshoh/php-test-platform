@@ -336,7 +336,7 @@ if (isset($_GET['url'])) {
         <div class="container">
 
             <?php $delay = 0; ?>
-            <?php $test_count = 0 ?>
+            <?php $test_count = 1 ?>
 
             <h1 class="title">Test: <?= $subject[0]['title'] ?></h1>
 
@@ -347,14 +347,14 @@ if (isset($_GET['url'])) {
                         <?php if (!empty($tests)): ?>
                             <h3 class="title_h3" style="animation-delay: <?= $delay += 0.05 ?>s">Test Questions</h3>
                             <div class="task_item" style="animation-delay: <?= $delay += 0.05 ?>s">
-                                <?php foreach ($tests as $index => $test):
+                                <?php foreach ($tests as $test):
                                     $testid = $test['id'];
                                     $options = $query->select('test_options', '*', "test_id = $testid");
                                     shuffle($options);
                                     ?>
                                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
                                         <label for="test_question_<?= $testid; ?>">
-                                            <p style="white-space: pre-wrap;"><?= ($index + 1) . ')   ' . $test['question'] ?></p>
+                                            <p style="white-space: pre-wrap;"><?= ($test_count++) . ')   ' . $test['question'] ?></p>
                                         </label><br>
 
                                         <div class="options">
@@ -377,10 +377,10 @@ if (isset($_GET['url'])) {
                         <?php if (!empty($tru_falses)): ?>
                             <h3 class="title_h3">True/False Questions</h3>
                             <div class="task_item">
-                                <?php foreach ($tru_falses as $index => $tru_false): ?>
+                                <?php foreach ($tru_falses as $tru_false): ?>
                                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
                                         <label for="tru_false_statement_<?= $tru_false['id']; ?>">
-                                            <p style="white-space: pre-wrap;"> <?= ($index + 1) . ')   ' . $tru_false['statement'] ?>
+                                            <p style="white-space: pre-wrap;"> <?= ($test_count++) . ')   ' . $tru_false['statement'] ?>
                                             </p>
                                         </label><br>
                                         <div class="options">
@@ -409,7 +409,7 @@ if (isset($_GET['url'])) {
                                     <?php $dropdownOptions[$index] = $dropdown['correct_answer']; ?>
                                 <?php endforeach; ?>
 
-                                <?php foreach ($dropdowns as $index => $dropdown): ?>
+                                <?php foreach ($dropdowns as $dropdown): ?>
                                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
                                         <?php shuffle($dropdownOptions); ?>
                                         <label for="dropdown_question_<?= $dropdown['id']; ?>">
