@@ -136,7 +136,7 @@ $subjects = $query->select('subjects', '*');
 </head>
 
 <body>
-    <?php include 'includes/header.php' ?>
+    <?php include 'header.php' ?>
     <div class="container">
 
         <section class="section call-to-action">
@@ -169,7 +169,7 @@ $subjects = $query->select('subjects', '*');
 
     </div>
 
-    <?php include 'includes/footer.php' ?>
+    <?php include 'footer.php' ?>
 </body>
 
 </html>
