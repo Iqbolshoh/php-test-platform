@@ -10,7 +10,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="./">Home</a></li>
-                    <li><a href="./admin/">Create Test</a></li>
+                    <li><a href="./user/">Create Test</a></li>
                     <li><a href="https://iqbolshoh.uz">iqbolshoh.uz</a></li>
                 </ul>
             </div>

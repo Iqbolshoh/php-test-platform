@@ -171,7 +171,7 @@
         <ul class="nav-menu">
             <li class="nav-item"><a href="./"
                     class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">Home</a></li>
-            <li class="nav-item"><a href="./admin/" class="nav-link">Create Test</a></li>
+            <li class="nav-item"><a href="./user/" class="nav-link">Create Test</a></li>
         </ul>
 
         <div class="lines">

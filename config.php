@@ -8,8 +8,7 @@ define("SITE_PATH", $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST']);
 date_default_timezone_set('Etc/GMT-5');
 
 const ROLES = [
-    'admin' => '/admin/',
-    'user' => '/'
+    'user' => '/user/'
 ];
 
 class Database
