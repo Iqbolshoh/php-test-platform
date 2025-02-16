@@ -124,7 +124,7 @@
 </style>
 
 <body>
-    <?php include 'includes/header.php' ?>
+    <?php include 'header.php' ?>
     <div class="container">
 
         <section class="hero">
@@ -146,7 +146,7 @@
         </section>
 
     </div>
-    <?php include 'includes/footer.php' ?>
+    <?php include 'footer.php' ?>
 </body>
 
 </html>
