@@ -169,7 +169,7 @@ if (
 <body>
     <div class="form-container">
         <h1>Sign Up</h1>
-        <form id="signupForm" method="POST" action="">
+        <form id="signupForm" method="POST">
             <div class="form-group">
                 <label for="first_name">First Name</label>
                 <input type="text" id="first_name" name="first_name" required maxlength="30">
@@ -211,137 +211,95 @@ if (
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        let isEmailAvailable = false;
-        let isUsernameAvailable = false;
-
-        function validateUsernameFormat(username) {
-            const usernamePattern = /^[a-zA-Z0-9_]+$/;
-            return usernamePattern.test(username);
-        }
-
-        function validateEmailFormat(email) {
-            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            return emailPattern.test(email);
-        }
-
-        function checkAvailability(type, value, messageElement, callback) {
-            fetch('check_availability.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `${type}=${encodeURIComponent(value)}`
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.exists) {
-                        messageElement.textContent = `This ${type} exists!`;
-                        callback(false);
-                    } else {
-                        messageElement.textContent = '';
-                        callback(true);
-                    }
-                });
-        }
-
-        function calculatePasswordStrength(password) {
-            let strength = 0;
-            const lengthBonus = password.length > 7 ? 1 : 0;
-            const numberBonus = /[0-9]/.test(password) ? 1 : 0;
-            const lowercaseBonus = /[a-z]/.test(password) ? 1 : 0;
-            const uppercaseBonus = /[A-Z]/.test(password) ? 1 : 0;
-            const specialCharBonus = /[!@#$%^&*(),.?":{}|<>]/.test(password) ? 1 : 0;
-            const repetitionPenalty = /(.)\1{2,}/.test(password) ? -1 : 0;
-
-            strength = lengthBonus + numberBonus + lowercaseBonus + uppercaseBonus + specialCharBonus + repetitionPenalty;
-            return strength;
-        }
-
-        document.getElementById('email').addEventListener('input', function () {
-            const email = this.value;
-            const emailMessageElement = document.getElementById('email-message');
-
-            if (!validateEmailFormat(email)) {
-                emailMessageElement.textContent = 'Email format is incorrect!';
-                isEmailAvailable = false;
-                return;
-            }
-
-            checkAvailability('email', email, emailMessageElement, status => isEmailAvailable = status);
-        });
-
-        document.getElementById('username').addEventListener('input', function () {
-            const username = this.value;
-            const usernameMessageElement = document.getElementById('username-message');
-
-            if (!validateUsernameFormat(username)) {
-                usernameMessageElement.textContent = 'Username can only contain letters, numbers, and underscores!';
-                isUsernameAvailable = false;
-                return;
-            }
-
-            checkAvailability('username', username, usernameMessageElement, status => isUsernameAvailable = status);
-        });
-
-        document.getElementById('password').addEventListener('input', function () {
-            const password = this.value;
-            const passwordMessageElement = document.getElementById('password-message');
-            let message = '';
-
-            if (password.length < 8) {
-                passwordMessageElement.textContent = 'Password must be at least 8 characters long!';
-                passwordMessageElement.className = 'strength-weak';
-                return;
-            }
-
-            passwordMessageElement.textContent = message;
-        });
-
-        document.getElementById('signupForm').addEventListener('submit', function (event) {
-            const email = document.getElementById('email').value;
-            const emailMessageElement = document.getElementById('email-message');
-            const username = document.getElementById('username').value;
-            const usernameMessageElement = document.getElementById('username-message');
-            const password = document.getElementById('password').value;
-            const passwordMessageElement = document.getElementById('password-message');
-
-            if (!validateEmailFormat(email)) {
-                emailMessageElement.textContent = 'Email format is incorrect!';
-                event.preventDefault();
-            }
-
-            if (!validateUsernameFormat(username)) {
-                usernameMessageElement.textContent = 'Username can only contain letters, numbers, and underscores!';
-                event.preventDefault();
-            }
-
-            if (!isEmailAvailable) {
-                emailMessageElement.textContent = 'This email exists!';
-                event.preventDefault();
-            }
-
-            if (!isUsernameAvailable) {
-                usernameMessageElement.textContent = 'This username exists!';
-                event.preventDefault();
-            }
-
-            if (password.length < 8) {
-                passwordMessageElement.textContent = 'Password must be at least 8 characters long!';
-                event.preventDefault();
-            }
-        });
-
-        document.getElementById('toggle-password').addEventListener('click', function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            const emailField = document.getElementById('email');
+            const usernameField = document.getElementById('username');
             const passwordField = document.getElementById('password');
-            const toggleIcon = this.querySelector('i');
+            const emailMessage = document.getElementById('email-message');
+            const usernameMessage = document.getElementById('username-message');
+            const passwordMessage = document.getElementById('password-message');
+            const submitButton = document.getElementById('submit');
+            const togglePassword = document.getElementById('toggle-password');
 
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                toggleIcon.classList.replace('fa-eye', 'fa-eye-slash');
-            } else {
-                passwordField.type = 'password';
-                toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
+            let emailAvailable = false;
+            let usernameAvailable = false;
+
+            function validateEmailFormat(email) {
+                return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email);
             }
+
+            function validateUsernameFormat(username) {
+                return /^[a-zA-Z0-9_]{3,30}$/.test(username);
+            }
+
+            function validatePassword() {
+                if (passwordField.value.length < 8) {
+                    passwordMessage.textContent = 'Password must be at least 8 characters long!';
+                    return false;
+                }
+                passwordMessage.textContent = '';
+                return true;
+            }
+
+            function checkAvailability(type, value, messageElement, callback) {
+                if (!value) return;
+
+                fetch('check_availability.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `${type}=${encodeURIComponent(value)}`
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.exists) {
+                            messageElement.textContent = `This ${type} is already taken!`;
+                            callback(false);
+                        } else {
+                            messageElement.textContent = '';
+                            callback(true);
+                        }
+                        updateSubmitButtonState();
+                    });
+            }
+
+            function updateSubmitButtonState() {
+                submitButton.disabled = !(emailAvailable && usernameAvailable && validatePassword());
+            }
+
+            emailField.addEventListener('input', function () {
+                if (!validateEmailFormat(this.value)) {
+                    emailMessage.textContent = 'Invalid email format!';
+                    emailAvailable = false;
+                    updateSubmitButtonState();
+                    return;
+                }
+                checkAvailability('email', this.value, emailMessage, status => {
+                    emailAvailable = status;
+                });
+            });
+
+            usernameField.addEventListener('input', function () {
+                if (!validateUsernameFormat(this.value)) {
+                    usernameMessage.textContent = 'Username must be 3-30 characters long and contain only letters, numbers, and underscores!';
+                    usernameAvailable = false;
+                    updateSubmitButtonState();
+                    return;
+                }
+                checkAvailability('username', this.value, usernameMessage, status => {
+                    usernameAvailable = status;
+                });
+            });
+
+            passwordField.addEventListener('input', function () {
+                validatePassword();
+                updateSubmitButtonState();
+            });
+
+            togglePassword.addEventListener('click', function () {
+                passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
         });
     </script>
 </body>
