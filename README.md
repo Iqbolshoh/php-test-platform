@@ -4,5 +4,3 @@
 🚧 Work in progress! 🚧
 
 ---
-
-![INTERFACE](./src/images/test.png)
