@@ -135,7 +135,7 @@ if (
         $redirectPath = SITE_PATH . ROLES[$_SESSION['role']];
         ?>
         <script>
-            window.onload = function () { Swal.fire({ icon: 'success', title: 'Registration successfu', timer: 1500, showConfirmButton: false }).then(() => { window.location.href = '<?= $redirectPath; ?>'; }); };
+            window.onload = function () { Swal.fire({ icon: 'success', title: 'Registration successful', timer: 1500, showConfirmButton: false }).then(() => { window.location.href = '<?= $redirectPath; ?>'; }); };
         </script>
         <?php
     } else {

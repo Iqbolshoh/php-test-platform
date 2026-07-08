@@ -4,7 +4,7 @@
 $lessonid = isset($_GET['lessonid']) ? intval($_GET['lessonid']) : null;
 
 if ($lessonid !== null) {
-    $lessons_test = $query->select('lessons', '*', "id = '$lessonid'");
+    $lessons_test = $query->select('subjects', '*', "id = '$lessonid'");
 } else {
     $lessons_test = [];
 }
@@ -15,7 +15,7 @@ $edit_test_id = isset($_GET['edit_test_id']) ? intval($_GET['edit_test_id']) : n
 
 $tests = [];
 if ($lessonid !== null) {
-    $tests = $query->select('test', '*', "lesson_id = '$lessonid'");
+    $tests = $query->select('test', '*', "subject_id = '$lessonid'");
 }
 
 $edit_test = null;
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $correct_option = $_POST['correct_option'];
 
         $test_id = $query->insert('test', [
-            'lesson_id' => $lessonid,
+            'subject_id' => $lessonid,
             'question' => $question
         ]);
 
@@ -211,7 +211,7 @@ if (isset($_GET['delete_id'])) {
 
                         <?php else: ?>
                             <form method="get" style="min-width: min(400px, 100%); margin: 50px auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                                <?php $lessons = $query->select('lessons', '*'); ?>
+                                <?php $lessons = $query->select('subjects', '*'); ?>
 
                                 <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="lessonid" style="display: block; font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Select a Lesson</label>

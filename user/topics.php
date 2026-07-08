@@ -1,15 +1,34 @@
-<?php include 'auth.php'?>
+<?php include 'auth.php' ?>
 <?
 
-$topics = $query->select('lessons', '*');
+function generateSlug($query, $title, $excludeId = null)
+{
+    $slug = strtolower(trim($title));
+    $slug = trim(preg_replace('/[^a-z0-9]+/', '-', $slug), '-');
+    $original = $slug;
+
+    $i = 2;
+    while (true) {
+        $condition = "url = '$slug'" . ($excludeId ? " AND id != $excludeId" : "");
+        if (empty($query->select('subjects', 'id', $condition))) {
+            break;
+        }
+        $slug = $original . '-' . $i++;
+    }
+
+    return $slug;
+}
+
+$topics = $query->select('subjects', '*');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['insert'])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
 
-    $insert = $query->insert('lessons', [
+    $insert = $query->insert('subjects', [
         'title' => $title,
-        'description' => $description
+        'description' => $description,
+        'url' => generateSlug($query, $title)
     ]);
 
     if ($insert) {
@@ -19,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['insert'])) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
     $id = $_POST['id'];
-    $delete = $query->delete('lessons', "id = $id");
+    $delete = $query->delete('subjects', "id = $id");
 
     if ($delete) {
         header("Location: ./topics.php");
@@ -31,9 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
     $title = $_POST['title'] ?? null;
     $description = $_POST['description'] ?? null;
 
-    $update = $query->update('lessons', [
+    $update = $query->update('subjects', [
         'title' => $title,
-        'description' => $description
+        'description' => $description,
+        'url' => generateSlug($query, $title, $id)
     ], "id = $id");
 
     if ($update) {
@@ -105,6 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
                                                 <th>№</th>
                                                 <th>Title</th>
                                                 <th>Description</th>
+                                                <th>Test Link</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -117,6 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
                                                     echo "<td>{$count}</td>";
                                                     echo "<td>{$topic['title']}</td>";
                                                     echo "<td>{$topic['description']}</td>";
+                                                    echo "<td><a href='" . SITE_PATH . "/test.php?url={$topic['url']}' target='_blank'>/test.php?url={$topic['url']}</a></td>";
                                                     echo "<td>
                                                             <button class='btn btn-warning btn-sm' 
                                                                     data-bs-toggle='modal' 
@@ -135,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
                                                     $count++;
                                                 }
                                             } else {
-                                                echo "<tr><td colspan='4'>No topics found.</td></tr>";
+                                                echo "<tr><td colspan='5'>No topics found.</td></tr>";
                                             }
                                             ?>
                                         </tbody>

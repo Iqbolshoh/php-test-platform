@@ -4,9 +4,9 @@
 $lesson_id = isset($_GET['lesson_id']) ? intval($_GET['lesson_id']) : 0;
 
 if ($lesson_id > 0) {
-    $results = $query->select('results', '*', "lesson_id = $lesson_id");
+    $results = $query->select('results', '*', "subject_id = $lesson_id");
 } else {
-    $lessons = $query->select('lessons', '*', '1');
+    $lessons = $query->select('subjects', '*', '1');
 }
 ?>
 

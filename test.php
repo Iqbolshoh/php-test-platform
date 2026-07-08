@@ -62,12 +62,14 @@ if (isset($_GET['url'])) {
         $totalQuestions = count($tests) + count($tru_falses) + count($dropdowns) + count($fill_in_the_blanks);
         $percentage = ($correctAnswersCount / $totalQuestions) * 100;
 
-        // $query->insert('results', [
-        //     'subject_id' => $subjectid,
-        //     // 'participant_name' => $participant_name,
-        //     'answered_questions' => $correctAnswersCount,
-        //     'total_questions' => $totalQuestions
-        // ]);
+        $participant_name = trim($_POST['participant_name'] ?? '') ?: 'Anonymous';
+
+        $query->insert('results', [
+            'subject_id' => $subjectid,
+            'participant_name' => $participant_name,
+            'answered_questions' => $correctAnswersCount,
+            'total_questions' => $totalQuestions
+        ]);
         ?>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -358,7 +360,7 @@ if (isset($_GET['url'])) {
     </style>
 
     <body>
-        <?php include 'includes/header.php' ?>
+        <?php include 'header.php' ?>
         <div class="container">
 
             <?php $delay = 0; ?>
@@ -374,6 +376,11 @@ if (isset($_GET['url'])) {
 
             <?php if (!empty($tests) || !empty($tru_falses) || !empty($dropdowns) || !empty($fill_in_the_blanks)): ?>
                 <form method="post">
+
+                    <div class="task_item" style="animation-delay: <?= $delay += 0.05 ?>s">
+                        <label for="participant_name">Your Name</label>
+                        <input type="text" id="participant_name" name="participant_name" placeholder="Enter your name" required>
+                    </div>
 
                     <div id="delay-animation" style="animation-delay: <?= $delay += 0.05 ?>s">
                         <?php if (!empty($tests)): ?>
@@ -487,7 +494,7 @@ if (isset($_GET['url'])) {
             <?php endif; ?>
 
         </div>
-        <?php include 'includes/footer.php' ?>
+        <?php include 'footer.php' ?>
     </body>
 
     </html>
