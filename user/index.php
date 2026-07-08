@@ -1,5 +1,5 @@
 <?php include 'auth.php'?>
-<?
+<?php
 $user = $query->select('users', '*')[0];
 $topics = $query->select('subjects', '*');
 $results = $query->select('results', '*');

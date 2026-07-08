@@ -1,5 +1,5 @@
 <?php include 'auth.php' ?>
-<?
+<?php
 
 function generateSlug($query, $title, $excludeId = null)
 {

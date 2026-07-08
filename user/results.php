@@ -1,5 +1,5 @@
 <?php include 'auth.php'?>
-<?
+<?php
 
 $lesson_id = isset($_GET['lesson_id']) ? intval($_GET['lesson_id']) : 0;
 
