@@ -1,7 +1,7 @@
 <?php include 'auth.php'?>
 <?
 $user = $query->select('users', '*')[0];
-$topics = $query->select('lessons', '*')[0];
+$topics = $query->select('subjects', '*');
 $results = $query->select('results', '*');
 
 $tests = count($query->select('test', '*'));
@@ -9,9 +9,8 @@ $tru_falses = count($query->select('tru_false', '*'));
 $dropdowns = count($query->select('dropdown', '*'));
 $fill_in_the_blanks = count($query->select('fill_in_the_blank', '*'));
 $matchings = count($query->select('matching', '*'));
-$answers = count($query->select('answers', '*'));
 
-$question = $tests + $tru_falses + $dropdowns + $fill_in_the_blanks + $matchings + $answers;
+$question = $tests + $tru_falses + $dropdowns + $fill_in_the_blanks + $matchings;
 
 ?>
 
@@ -64,7 +63,7 @@ $question = $tests + $tru_falses + $dropdowns + $fill_in_the_blanks + $matchings
 
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3><?= count($topics) . ' Topics' ?></sup></h3>
+                  <h3><?= count($topics) . ' Topics' ?></h3>
 
                   <p>Available in the system</p>
                 </div>
