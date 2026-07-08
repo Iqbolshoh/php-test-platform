@@ -1,9 +1,5 @@
 <?php
-session_start();
-
-include './config.php';
-$query = new Database();
-$query->checkUserSession('user');
+include 'auth.php';
 
 $sessions = $query->select('active_sessions', '*', 'user_id = ?', [$_SESSION['user_id']], 'i');
 
@@ -36,15 +32,22 @@ if (isset($_POST['update_session'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="./src/css/adminlte.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <title>AdminLTE 3 | Active Sessions</title>
+    <?php include 'includes/css.php'; ?>
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include './header.php'; ?>
+        <?php include 'includes/navbar.php'; ?>
         <div class="content-wrapper">
+
+            <?php
+            $arr = array(
+                ["title" => "Home", "url" => "./"],
+                ["title" => "Active Sessions", "url" => "#"],
+            );
+            pagePath('Active Sessions', $arr);
+            ?>
 
             <section class="content">
                 <div class="container-fluid">
@@ -114,8 +117,10 @@ if (isset($_POST['update_session'])) {
             </section>
 
         </div>
-        <?php include './footer.php'; ?>
+        <?php include 'includes/footer.php'; ?>
     </div>
+    <?php include 'includes/js.php'; ?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function openEditModal(deviceName) {
             document.getElementById('deviceName').value = deviceName;
@@ -138,10 +143,6 @@ if (isset($_POST['update_session'])) {
             });
         }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./src/js/jquery.min.js"></script>
-    <script src="./src/js/bootstrap.bundle.min.js"></script>
-    <script src="./src/js/adminlte.min.js"></script>
 </body>
 
 </html>

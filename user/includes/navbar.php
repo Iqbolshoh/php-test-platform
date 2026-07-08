@@ -101,8 +101,8 @@ function pagePath($pageTitle, $breadcrumb)
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item has-treeview <?= in_array($current_page, ['index.php', 'user.php']) ? 'menu-open' : ''; ?>">
-                    <a class="nav-link <?= in_array($current_page, ['index.php', 'user.php']) ? 'active' : ''; ?>">
+                <li class="nav-item has-treeview <?= in_array($current_page, ['index.php', 'user.php', 'active_sessions.php']) ? 'menu-open' : ''; ?>">
+                    <a class="nav-link <?= in_array($current_page, ['index.php', 'user.php', 'active_sessions.php']) ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             Dashboard
@@ -122,6 +122,14 @@ function pagePath($pageTitle, $breadcrumb)
                             <a href="./user.php" class="nav-link <?= ($current_page === 'user.php') ? 'active' : ''; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>User</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./active_sessions.php" class="nav-link <?= ($current_page === 'active_sessions.php') ? 'active' : ''; ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Active Sessions</p>
                             </a>
                         </li>
                     </ul>
