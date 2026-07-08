@@ -204,6 +204,8 @@ if (isset($_GET['delete_id'])) {
                 </div>
             </section>
         </div>
+
+        <?php include 'includes/footer.php'; ?>
     </div>
     <?php include 'includes/js.php'; ?>
 </body>
