@@ -18,7 +18,7 @@
             <div class="footer-social">
                 <h3>Follow Us</h3>
                 <ul>
-                    <li><a href="https://t.me/templates_uz_support" target="_blank">Telegram</a></li>
+                    <li><a href="https://t.me/+998776030033" target="_blank">Telegram</a></li>
                     <li><a href="https://www.instagram.com/iqbolshoh_777" target="_blank">Instagram</a></li>
                     <li><a href="https://x.com/iqbolshoh_777" target="_blank">X</a></li>
                     <li><a href="https://www.linkedin.com/in/iqbolshoh" target="_blank">LinkedIn</a></li>
